@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background: #F2F2F2;
+}
+
+.cuerpo {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-rows: 130px 1fr 60px;
+  grid-template-areas: "header header header" ". contenido ." "footer footer footer";
+}
+
+/* Encabezado */
+
+.header {
+  grid-area: header;
+  background: #42B0B0;
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-areas: ". conHeader ."
+}
+
+.conHeader {
+  grid-area: conHeader;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenido */
+
+.contenido {
+  grid-area: contenido;
+  background: white;
+}
+
+/* Pie de pagina */
+
+.footer {
+  grid-area: footer;
+  background: #384B4B;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-areas: ". conPiedepagina ."
+}
+
+.conPiedepagina {
+  grid-area: conPiedepagina;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Diseño responsibo */
+
+@media only screen and (max-width: 450px) {
+  .cuerpo {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "header" "contenido" "footer";
+  }
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-areas: "conHeader "
+  }
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-areas: "conPiedepagina"
+  }
+}
